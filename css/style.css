@@ -6,6 +6,16 @@
   box-sizing: inherit;
 }
 
+:root{
+    --blue:#0065fc;
+    --lightblue:#deebff;
+    --aliceblue:#f3f8ff; 
+    --gray:#f2f2f2;
+    --grayplus:#d9d9d9;
+    --black:#000000; 
+    --white:#FFFFFF;
+}
+
 html,
 body {
   box-sizing: border-box;
@@ -38,11 +48,11 @@ nav {
 }
 
 nav a:hover {
-  border-top-color: #0065fc;
+  border-top-color: var(--blue);
 }
 #nav-word-hebergement {
   font-weight: bold;
-  color: #0065fc;
+  color: var(--blue);
 }
 /*div logo et image logo*/
 #logoimage {
@@ -77,25 +87,25 @@ nav a:hover {
 
 .recherche i {
   padding: 16px 20px;
-  background-color: #ededed;
+  background-color: var(--gray);
   border-radius: 15px 0px 0px 15px;
 }
 
 .recherche input {
   padding: 0px 45px 0px 15px;
-  border: 1px solid lightgray;
+  border: 1px solid var(--gray);
 }
 
 .recherche input::placeholder {
   font-size: large;
   font-weight: bold;
-  color: black;
+  color: var(--black);
 }
 button {
   padding: 0px 20px;
   border-radius: 0px 16px 16px 0px;
-  background-color: #0065fc;
-  color: white;
+  background-color: var(--blue);
+  color: var(--white);
   font-weight: bold;
   font-size: large;
   border: none;
@@ -122,20 +132,20 @@ button {
 .filter {
   border-radius: 30px;
   padding: 0px 16px 0px 0px;
-  border: 2px solid #d9d9d9;
+  border: 2px solid var(--grayplus);
   cursor: pointer;
  transition: all 0.5s ease-out;
 }
 .filter:hover{
-    background-color: #f3f8ff;
+    background-color: var(--aliceblue);
     transform: scale(1.1);
 }
 .fa-solid.fa-money-bill-wave,
 .fas.fa-child,
 .fas.fa-heart,
 .fas.fa-dog {
-  color: blue;
-  background-color: #deebff;
+  color:var(--blue);
+  background-color: var(--lightblue);
   padding: 16px;
   margin: -2px;
   border-radius: 50%;
@@ -152,12 +162,12 @@ button {
   padding: 32px;
 }
 .fas.fa-info {
-  color: #0065fc;
+  color: var(--blue);
   height: 32px;
   width: 32px;
   min-height: 32px;
   min-width: 32px;
-  border: solid 1px #d9d9d9;
+  border: solid 1px var(--grayplus);
   border-radius: 100%;
   display: flex;
   align-items: center;
@@ -166,7 +176,7 @@ button {
 }
 
 /*section Hébergements à Marseille et Les plus populaires*/
-#marseille-populaire {
+#liste-logements {
   display: flex;
   flex-direction: row;
   padding: 32px 0px;
@@ -176,16 +186,17 @@ button {
 
 .hebergement-marseille {
   flex-basis: 67%;
-  padding: 0px;
+  padding: 32px;
+  margin: 10px;
   border-radius: 16px;
-  background-color: #ededed;
+  background-color: var(--gray);
 }
 
 .populaire-plus {
   flex-basis: 33%;
   padding: 32px;
   border-radius: 16px;
-  background-color: #ededed;
+  background-color: var(--gray);
 }
 
 
@@ -193,38 +204,40 @@ button {
 .resultats-recherche-marseille{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between ;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
-.resultats-recherche-marseille a{
+.carte-logement{
   display: block;
-  width: 25%;
+  width: 30%;
   flex-wrap: wrap;
   border-radius: 16px;
   justify-content: space-between;
-  background-color: white;
-  box-shadow: 0px 0px 16px gray;
+  background-color: var(--white);
+  box-shadow: 0px 0px 16px var(--gray);
 }
+
 
 /*les images hébergements à Marseille*/
-.resultats-recherche-marseille img { 
+.carte-logement img { 
   border-radius: 16px 16px 0px 0px;
-  height: 155px;  
+  height: 120px;  
   width: 100%;
+  min-width: 200px;
   object-fit: cover;
+  object-position: center;
 }
 
-.resultats-recherche-marseille p, .resultats-recherche-marseille h3{
-    margin: 3px;
+.carte-logement p, .carte-logement h3{
+    margin: 7px 0px;
 }
 
 
 /*Afficher plus*/
-.hebergement-marseille a {
-  font-weight: bolder;
-  margin: 10px;
-  padding: 10px;
-  font-size: larger;
+.afficherplus {
+font-size: larger;
+font-weight: bold;
 }
 /*Les plus populaires*/
 .title-populaire-chart {
@@ -237,57 +250,54 @@ button {
   font-weight:bolder;
 }
 .populaire-plus img {
-  height: 140px;
-  width: 200px;
+  height: 170px;
+  width: 150px;
   border-radius: 16px 0 0 16px;
   object-fit: cover;
   padding-right: 15px;
 }
-.listpopulaire {
+.listpopulaire{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin: 0;
-  padding: 0;
   align-content: space-between;
 }
-.soleil,
-.eau,
-.bleublanc {
+.listpopulaire a{
+  margin-bottom: 30px;
+}
+.sun{
   display: flex;
   align-items: center;
   border-radius: 16px;
-  background-color: white;
+  background-color: var(--white);
   padding: 5px 10px 5px 5px;
-  margin-bottom: 30px;
-  box-shadow: 0px 0px 16px gray;
-  flex-basis: 100%;
+  box-shadow: 0px 0px 16px var(--gray);
+  width: 500px;
+  height: 200px;
 }
-.sundescription,
-.waterdescription,
-.bleublancdescription {
+.sun-description{
   display: flex;
   flex-direction: column;
-  padding-right: 7px;
-  margin-bottom: 0px;
+  width: 100%;
+  height: 150px;
+  padding: 15px;
 }
-.sundescription h3,
-.waterdescription h3,
-.bleublancdescription h3 {
+.sun h3 {
   margin-bottom: auto;
+  font-weight: bolder;
+  font-size:x-large;
 }
-.sundescription p,
-.waterdescription p,
-.bleublancdescription p {
-  margin-top: 7px;
+.sun p{
+  margin-top: 10px;
+  font-size:large;
 }
 
 /* Color of the stars*/
 .bluestar {
-    color: #0065fc;
+    color: var(--blue);
   }
   .graystar {
-    color: #d9d9d9;
+    color: var(--grayplus);
   }
 
 
@@ -314,7 +324,7 @@ figcaption{
 .block1,
 .block3
 {
-  box-shadow: 1px 3px 4px gray;
+  box-shadow: 1px 3px 4px var(--gray);
   width: 22%;
   border-radius: 16px;
   overflow: hidden;
@@ -328,7 +338,7 @@ figcaption{
   max-width: 100%;
   height: 500px;
   object-fit: cover;
-  box-shadow: 1px 3px 4px gray;
+  box-shadow: 1px 3px 4px var(--gray);
   border-radius: 16px 16px 0px 0px;
 }
 
@@ -338,7 +348,7 @@ figcaption{
   width: 100%;
   height: 200px;
   object-fit: cover;
-  box-shadow: 1px 3px 4px gray;
+  box-shadow: 1px 3px 4px var(--gray);
   border-radius: 16px 16px 0px 0px;
 }
 
@@ -352,14 +362,14 @@ figcaption{
 .block2-part1 {
   border-radius: 16px;
   align-items: stretch;
-  box-shadow: 1px 3px 4px gray;
+  box-shadow: 1px 3px 4px var(--gray);
   border-radius: 16px;
 }
 
 .block2-part2 {
   border-radius: 16px;
   align-items: stretch;
-  box-shadow: 1px 3px 4px gray;
+  box-shadow: 1px 3px 4px var(--gray);
   border-radius: 16px;
 }
 
@@ -373,14 +383,14 @@ figcaption{
   .block4-part1 {
     border-radius: 16px;
     align-items: stretch;
-    box-shadow: 1px 3px 4px gray;
+    box-shadow: 1px 3px 4px var(--gray);
     border-radius: 16px;
   }
   
   .block4-part2 {
     border-radius: 16px;
     align-items: stretch;
-    box-shadow: 1px 3px 4px gray;
+    box-shadow: 1px 3px 4px var(--gray);
     border-radius: 16px;
   }
 
@@ -389,7 +399,7 @@ figcaption{
 /* Footer*/
 
 .footer {
-  background-color: #f2f2f2;
+  background-color: var(--gray);
   width: 100%;
 }
 
@@ -437,22 +447,19 @@ footer a {
     display: flex;
     margin: auto;
     padding-bottom: 10px;
-    border: 1px solid red;
   }
   nav a:hover {
-    border-bottom: 3px solid #0065fc;
+    border-bottom: 3px solid var(--blue);
     border-top-color: transparent;
   }
 
   .sub-nav {
     display: flex;
     width: 100%;
-
-    border: 1px solid black;
   }
   .sub-nav a {
+    text-align: center;
     width: 50%;
-    border: 1px solid red;
   }
 
   #textloup {
@@ -461,57 +468,50 @@ footer a {
   .fa-solid.fa-magnifying-glass {
     display: flex;
     background-color: inherit;
+    justify-content: center;
   }
 
   button {
     border-radius: 16px;
     padding: 0px 24px;
-    width: 50%;
+    min-width: 20px ;
   }
   .recherche input {
     padding: 0px 100px 0px 15px;
   }
 
-  #marseille-populaire {
+  #liste-logements {
     flex-direction: column-reverse;
   }
-
-  .cannebiere img {
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  .port img {
+  .carte-logement img {
     width: 100%;
     object-fit: cover;
     object-position: center;
   }
-  .mouettes img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .mer img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .panier img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .amina img {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-  .resultats-recherche-marseille {
+  .carte-logement {
     display: block;
-    flex-direction: column;
+    flex-direction:row ;
     width: 100%;
   }
+
+  /*Activités à Marseille*/
+  .allblocks{
+      display: block;
+      flex-direction: column;
+  }
+
+  .block1, .block2, .block3, .block4 {
+    width: 100%;;
+    margin-top: 30px;
+  }
+  .block2-part1, .block4-part1{
+    margin-bottom: 30px;
+  }
+  .allblocks img {
+    width: 100%;
+    height: 200px;
+  }
+  
   /* footer*/
   .blocks-footer {
     flex-direction: column;
