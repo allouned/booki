@@ -22,7 +22,7 @@ body {
   font-family: "Raleway", "Arial", sans-serif;
 }
 .contenant {
-  margin: 30px;
+  margin: 32px;
 }
 
 a {
@@ -87,8 +87,14 @@ nav a:hover {
 
 .recherche input {
   padding: 0px 45px 0px 15px;
-  width: 250px;
+  width: 300px;
   border: 1px solid var(--gray);
+  height: 60px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.fa-solid.fa-location-dot{
+font-size: 20px;
 }
 
 .recherche input::placeholder {
@@ -173,27 +179,19 @@ button {
 }
 
 /*section Hébergements à Marseille et Les plus populaires*/
-#liste-logements {
+#liste-logements{
   display: flex;
   flex-direction: row;
   padding: 32px 0px;
-  margin: 0px;
   gap: 16px;
 }
 
-.hebergement-marseille {
+.hebergement-marseille{
   flex-basis: 67%;
   padding: 32px;
   margin: 10px;
   border-radius: 16px;
   background-color: var(--gray);
-}
-
-.hebergement-marseille h2 {
-  font-size: 28px;
-}
-.populaire-plus h2 {
-  font-size: 28px;
 }
 .populaire-plus {
   flex-basis: 33%;
@@ -203,20 +201,27 @@ button {
   background-color: var(--gray);
 }
 
+.hebergement-marseille h2 {
+  font-size: 24px;
+}
+.populaire-plus h2 {
+  font-size: 24px;
+}
+
 /*liste des blocks Hebergements à Marseille*/
 .resultats-recherche-marseille {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 16px;
   margin-bottom: 42px;
 }
 
 .carte-logement {
   display: block;
-  width: 30%;
+  width: 28%;
   min-width: 140px;
-  padding: 8px;
+  padding: 7px;
   flex-wrap: wrap;
   border-radius: 16px;
   justify-content: space-between;
@@ -226,7 +231,6 @@ button {
 .carte-logement:hover {
   transform: scale(1.1);
 }
-
 /*les images hébergements à Marseille*/
 .carte-logement img {
   border-radius: 16px 16px 0px 0px;
@@ -238,9 +242,12 @@ button {
   object-position: center;
 }
 
-.carte-logement p,
+.carte-logement p{
+  margin: 7px;
+}
 .carte-logement h3 {
-  margin: 7px 0px;
+  margin: 7px;
+  font-size: 16px;
 }
 
 /*Afficher plus*/
@@ -250,11 +257,12 @@ button {
   margin-left: 10px;
 }
 /*Les plus populaires*/
-.title-populaire-chart {
+.title-populaire-chart{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  width: 370px;
+  margin:auto;
 }
 .fa-solid.fa-chart-line {
   font-weight: bolder;
@@ -275,7 +283,7 @@ button {
   border-radius: 16px;
   background-color: var(--white);
   margin-bottom: 32px;
-  padding: 8px;
+  padding: 7px;
   box-shadow: 0px 0px 16px var(--gray);
 }
 
@@ -284,13 +292,12 @@ button {
 }
 
 .sun img {
-  width: 150px;
+  width: 140px;
   align-self: stretch;
   align-items: stretch;
   height: 150px;
   border-radius: 16px 0 0 16px;
   margin-right: 32px;
-
   object-fit: cover;
 }
 
@@ -319,6 +326,9 @@ button {
 .activites {
   display: block;
   margin-bottom: 30px;
+}
+#act{
+  font-size: 28px;
 }
 .allblocks {
   display: flex;
@@ -504,6 +514,10 @@ footer a {
     margin: auto;
     width: auto;
   }
+  .title-populaire-chart{
+    margin: auto;
+    width: auto;
+  }
 
   /*Activités à Marseille*/
   .allblocks {
@@ -547,6 +561,9 @@ footer a {
     flex-direction: column;
   }
 .sun a{
+  width: auto;
+}
+.title-populaire-chart{
   width: auto;
 }
 .allblocks{
